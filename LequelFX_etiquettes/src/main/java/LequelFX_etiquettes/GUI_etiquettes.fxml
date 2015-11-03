@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LequelFX_etiquettes.Gui_etiquettes_controller">
+<top><HBox prefHeight="172.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+<children>
+<VBox>
+<children><ChoiceBox fx:id="liste_disques_choiceBox" prefHeight="25.0" prefWidth="306.0" /><HBox prefHeight="100.0" prefWidth="200.0">
+<children>
+<HBox alignment="CENTER" prefHeight="78.0" prefWidth="294.0">
+<children><Button fx:id="rafraichir_button" mnemonicParsing="false" onAction="#on_rafraichir_button" text="Rafraîchir la liste des disques" />
+</children>
+</HBox>
+</children></HBox>
+<HBox alignment="CENTER">
+<children><Button fx:id="etiquette_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on_etiquette_button" prefHeight="25.0" prefWidth="155.0" text="Nouvelle étiquette" textAlignment="CENTER">
+<HBox.margin>
+<Insets />
+</HBox.margin></Button>
+</children>
+</HBox>
+</children>
+</VBox>
+</children>
+<BorderPane.margin>
+<Insets left="10.0" right="10.0" top="20.0" />
+</BorderPane.margin></HBox>
+</top>
+<bottom><HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+</bottom></BorderPane>
