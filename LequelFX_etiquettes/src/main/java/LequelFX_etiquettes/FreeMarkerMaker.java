@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class FreeMarkerMaker {
 		try {
 		      // 1) Load Docx file by filling Velocity template engine and cache it to the registry
 
-			  InputStream in = new FileInputStream(new File("src/main/java/LequelFX_etiquettes/modele_etiquette_test_reprise.odt"));
+			  InputStream in = Main.class.getResource("modele_etiquette_test_reprise.odt").openStream();
 
 		      IXDocReport report = XDocReportRegistry.getRegistry().loadReport(in,TemplateEngineKind.Freemarker);
 		      

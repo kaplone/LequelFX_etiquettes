@@ -41,10 +41,10 @@ public class Gui_etiquettes_controller implements Initializable {
 	
 	@FXML
 	public void on_rafraichir_button(){
-		
+		refreshList();
 	}
 	
-private void refreshList(){
+    private void refreshList(){
 		
 		collec_disques.clear();
 		
