@@ -41,6 +41,8 @@ public class FreeMarkerMaker {
 	
 	static String string = "";
 	
+	final static int BOURRAGE = 9;
+	
 	protected static String cutX (String s){
   	  return  s.length() > 16 ? s.substring(0, 16) : s;
     }
@@ -50,7 +52,9 @@ public class FreeMarkerMaker {
 		try {
 		      // 1) Load Docx file by filling Velocity template engine and cache it to the registry
 
-			  InputStream in = Main.class.getResource("modele_etiquette_test_reprise.odt").openStream();
+			  InputStream in = Main.class.getResource("modele_etiquette_test_reprise_cats.odt").openStream();
+			  //InputStream in = Main.class.getResource("modele_etiquette_test_reprise_satellite.odt").openStream();
+
 
 		      IXDocReport report = XDocReportRegistry.getRegistry().loadReport(in,TemplateEngineKind.Freemarker);
 		      
@@ -98,14 +102,14 @@ public class FreeMarkerMaker {
 	                  catch (ArrayIndexOutOfBoundsException | NumberFormatException nfe){
 	                	  string = listes.get(i).get(0);
 	                  }
-	                  context.put(String.format("alt%d", i), listes.get(i).subList(1, listes.get(i).size() > 9 ? 9 : listes.get(i).size()));
+	                  context.put(String.format("alt%d", i), listes.get(i).subList(1, listes.get(i).size() > BOURRAGE ? BOURRAGE : listes.get(i).size()));
 		    	  }
 		    	  else {
 		    		  context.put(String.format("alt%d", i), listes.get(i));
 		    	  }
                   
 		    	  String bourrage = "";
-		    	  for (int k=listes.get(i).size(); k < 9 ; k++){
+		    	  for (int k=listes.get(i).size(); k < BOURRAGE ; k++){
 		    		  bourrage += "\n";
 		    	  }
 		    	  
